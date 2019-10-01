@@ -11,10 +11,16 @@ namespace LightInject.Microsoft.Hosting
     /// </summary>
     public static class HostBuilderExtensions
     {
-        public static IHostBuilder UseLightInject(this IHostBuilder builder, Action<IServiceRegistry>? action = null)
+        /// <summary>
+        /// Configures the <paramref name="builder"/> to use LightInject as the service container.
+        /// </summary>
+        /// <param name="builder">The target <see cref="IHostBuilder"/>.</param>
+        /// <param name="configureServices">A delegate passing the <see cref="IServiceRegistry"/> used to configure services.</param>
+        /// <returns>The <see cref="IHostBuilder"/> configured to use LightInject.</returns>
+        public static IHostBuilder UseLightInject(this IHostBuilder builder, Action<IServiceRegistry>? configureServices = null)
         {
             var container = new ServiceContainer(ContainerOptions.Default.Clone().WithMicrosoftSettings().WithAspNetCoreSettings());
-            action?.Invoke(container);
+            configureServices?.Invoke(container);
             return builder.UseServiceProviderFactory(new LightInjectServiceProviderFactory(container));
         }
     }
