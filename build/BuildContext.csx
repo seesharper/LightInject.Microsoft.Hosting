@@ -1,4 +1,4 @@
-#load "nuget:Dotnet.Build, 0.3.8"
+#load "nuget:Dotnet.Build, 0.7.1"
 using static FileUtils;
 using System.Xml.Linq;
 
@@ -10,18 +10,15 @@ var projectFolder = Path.Combine(root, "..", "src", projectName);
 
 var testProjectFolder = Path.Combine(root, "..", "src", $"{projectName}.Tests");
 
-var pathToTestAssembly = Path.Combine(testProjectFolder, "bin", "release", "netcoreapp3.0", $"{projectName}.Tests.dll");
-
-
 var artifactsFolder = CreateDirectory(root, "Artifacts");
 var gitHubArtifactsFolder = CreateDirectory(artifactsFolder, "GitHub");
 var nuGetArtifactsFolder = CreateDirectory(artifactsFolder, "NuGet");
 
+var coverageArtifactsFolder = Path.GetFullPath(CreateDirectory(artifactsFolder, "TestCoverage"));
+
 var pathToReleaseNotes = Path.Combine(gitHubArtifactsFolder, "ReleaseNotes.md");
 
 var version = ReadVersion();
-
-var pathToGitHubReleaseAsset = Path.Combine(gitHubArtifactsFolder, $"{projectName}.{version}.zip");
 
 string ReadVersion()
 {

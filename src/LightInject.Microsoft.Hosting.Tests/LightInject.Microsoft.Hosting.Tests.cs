@@ -14,6 +14,7 @@ namespace LightInject.Microsoft.Hosting.Tests
             var foo = host.Services.GetRequiredService<IFoo>();
         }
 
+        [Fact]
         public void ShouldRegisterAndResolveService()
         {
             var host = new HostBuilder().UseLightInject(r => r.Register<IBar, Bar>()).Build();

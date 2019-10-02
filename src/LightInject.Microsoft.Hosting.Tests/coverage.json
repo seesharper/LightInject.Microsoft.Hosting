@@ -1,0 +1,46 @@
+{
+  "LightInject.Microsoft.Hosting.dll": {
+    "/Users/bernhardrichter/GitHub/LightInject.Microsoft.Hosting/src/LightInject.Microsoft.Hosting/LightInject.Microsoft.Hosting.cs": {
+      "LightInject.Microsoft.Hosting.HostBuilderExtensions": {
+        "Microsoft.Extensions.Hosting.IHostBuilder LightInject.Microsoft.Hosting.HostBuilderExtensions::UseLightInject(Microsoft.Extensions.Hosting.IHostBuilder,System.Action`1<LightInject.IServiceRegistry>)": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 28,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 17,
+              "Offset": 28,
+              "EndOffset": 40,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "LightInject.Microsoft.Hosting.ContainerOptionsExtensions": {
+        "LightInject.ContainerOptions LightInject.Microsoft.Hosting.ContainerOptionsExtensions::WithAspNetCoreSettings(LightInject.ContainerOptions)": {
+          "Lines": {
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
