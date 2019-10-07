@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Setup .NET Core
-        uses: rojepp/setup-dotnet@fix_dotnet_root
+        uses: actions/setup-dotnet@master
         with:
           dotnet-version: 3.0.100
       - name: Install dotnet-script
