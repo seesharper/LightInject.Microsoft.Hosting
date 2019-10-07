@@ -18,7 +18,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="3.0.0" />
-    <DotNetCliToolReference Include="dotnet-reportgenerator-cli" Version="4.1.4" />
+
 
   </ItemGroup>
 
