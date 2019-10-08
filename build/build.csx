@@ -3,6 +3,7 @@
 WriteLine(BuildEnvironment.GitHubAccessToken.Substring(10));
 WriteLine(BuildContext.Owner);
 WriteLine(BuildContext.ProjectName);
+WriteLine(Git.Default.GetUrlToPushOrigin());
 
 [StepDescription("Runs the tests with test coverage")]
 Step testcoverage = () => DotNet.TestWithCodeCoverage();
