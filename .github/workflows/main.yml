@@ -15,7 +15,7 @@ jobs:
       - name: Install Net6.0 preview
         uses: actions/setup-dotnet@v1.8.1
         with:
-          dotnet-version: 6.0.100-preview.7
+          dotnet-version: 6.0.100-preview.7.21379.14
       - name: Install dotnet-script
         run: dotnet tool install dotnet-script --tool-path dotnet-script-tool
 
