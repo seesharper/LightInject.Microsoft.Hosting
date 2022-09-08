@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{91F8E138-6958-48B6-A254-3F7760AE4881}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightInject.Microsoft.Hosting", "src\LightInject.Microsoft.Hosting\LightInject.Microsoft.Hosting.csproj", "{1C737106-0BE2-47EC-BCB5-587E718765BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightInject.Microsoft.Hosting.Tests", "src\LightInject.Microsoft.Hosting.Tests\LightInject.Microsoft.Hosting.Tests.csproj", "{DC08DF7E-EC2B-4406-A47D-7B48969EE22E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C737106-0BE2-47EC-BCB5-587E718765BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C737106-0BE2-47EC-BCB5-587E718765BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C737106-0BE2-47EC-BCB5-587E718765BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C737106-0BE2-47EC-BCB5-587E718765BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC08DF7E-EC2B-4406-A47D-7B48969EE22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC08DF7E-EC2B-4406-A47D-7B48969EE22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC08DF7E-EC2B-4406-A47D-7B48969EE22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC08DF7E-EC2B-4406-A47D-7B48969EE22E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C737106-0BE2-47EC-BCB5-587E718765BB} = {91F8E138-6958-48B6-A254-3F7760AE4881}
+		{DC08DF7E-EC2B-4406-A47D-7B48969EE22E} = {91F8E138-6958-48B6-A254-3F7760AE4881}
+	EndGlobalSection
+EndGlobal
