@@ -16,7 +16,14 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
               
 ```
 
-sThe `CompositionRoot` class is usually placed in the host project (the project containing `program.cs`) and is used to register services that are specific to **LightInject**
+Or from ASPNET 6 and onwards with minimal `Program.cs` setup:
+
+```c#
+var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseLightInject(sr => sr.RegisterFrom<CompositionRoot>());
+```
+
+The `CompositionRoot` class is usually placed in the host project (the project containing `Program.cs`) and is used to register services that are specific to **LightInject**
 
 ```c#
 public class HostCompositionRoot : ICompositionRoot
