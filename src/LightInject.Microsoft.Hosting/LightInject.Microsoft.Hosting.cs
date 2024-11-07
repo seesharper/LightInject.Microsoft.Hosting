@@ -73,7 +73,7 @@ namespace Microsoft.Extensions.Hosting
         /// <returns><see cref="ContainerOptions"/>.</returns>
         public static ContainerOptions WithAspNetCoreSettings(this ContainerOptions options)
         {
-            options.EnableVariance = false;
+            options.EnableVariance = true;
             return options;
         }
     }
