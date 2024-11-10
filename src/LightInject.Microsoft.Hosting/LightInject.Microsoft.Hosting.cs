@@ -52,13 +52,17 @@ namespace Microsoft.Extensions.Hosting
         /// </summary>
         /// <param name="builder">The target <see cref="IHostBuilder"/>.</param>
         /// <param name="configureServices">A delegate passing the <see cref="IServiceRegistry"/> used to configure services.</param>
+        /// <param name="configureOptions">A delegate passing the </param>
         /// <returns>The <see cref="IHostBuilder"/> configured to use LightInject.</returns>
-        public static IHostBuilder UseLightInject(this IHostBuilder builder, Action<IServiceRegistry>? configureServices = null)
+        public static IHostBuilder UseLightInject(this IHostBuilder builder, Action<IServiceRegistry>? configureServices = null, Action<ContainerOptions> configureOptions = null)
         {
-            var container = new ServiceContainer(ContainerOptions.Default.Clone().WithMicrosoftSettings().WithAspNetCoreSettings());
+            var options = ContainerOptions.Default.Clone().WithMicrosoftSettings().WithAspNetCoreSettings();
+            configureOptions?.Invoke(options);
+            var container = new ServiceContainer(options);
             configureServices?.Invoke(container);
             return builder.UseServiceProviderFactory(new LightInjectServiceProviderFactory(container));
         }
+        
     }
 
     /// <summary>
@@ -73,7 +77,7 @@ namespace Microsoft.Extensions.Hosting
         /// <returns><see cref="ContainerOptions"/>.</returns>
         public static ContainerOptions WithAspNetCoreSettings(this ContainerOptions options)
         {
-            options.EnableVariance = true;
+            options.EnableVariance = false;
             return options;
         }
     }
