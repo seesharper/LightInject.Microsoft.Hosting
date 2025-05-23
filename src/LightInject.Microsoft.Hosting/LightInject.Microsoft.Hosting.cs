@@ -59,10 +59,12 @@ namespace Microsoft.Extensions.Hosting
             var options = ContainerOptions.Default.Clone().WithMicrosoftSettings().WithAspNetCoreSettings();
             configureOptions?.Invoke(options);
             var container = new ServiceContainer(options);
+            container.ConstructorDependencySelector = new AnnotatedConstructorDependencySelector();
+            container.ConstructorSelector = new AnnotatedConstructorSelector(container.CanGetInstance);
             configureServices?.Invoke(container);
             return builder.UseServiceProviderFactory(new LightInjectServiceProviderFactory(container));
         }
-        
+
     }
 
     /// <summary>
